@@ -31,6 +31,14 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void HostGame(string ipAddress){
+
+    }
+
+    public void JoinGame(){
+
+    }
+
 
     private void OnEnable()
     {
