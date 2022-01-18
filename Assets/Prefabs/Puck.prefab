@@ -131,9 +131,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 672551224525075496}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf357cde612580485bb9cc495dec646e, type: 3}
+  m_Script: {fileID: 11500000, guid: b804d883b8937a1c5b8f59289a0ada9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 15
-  maxSpeed: 50
-  minSpeed: 10
+  startSpeed: 5
+  maxSpeed: 10
+  minSpeed: 1

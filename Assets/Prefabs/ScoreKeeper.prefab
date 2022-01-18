@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Player 1: 99'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 13cd2a12135b4239c9a091066e62a9f2, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 13cd2a12135b4239c9a091066e62a9f2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -186,12 +186,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
+    m_Left: 30
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 1200
+  m_Spacing: 1460
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2725845729168372606}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6fe098efe5d16d2699d55f7351b0b83, type: 3}
+  m_Script: {fileID: 11500000, guid: f06267beb8135e312913a9e30c676eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textScorePlayer1: {fileID: 2725845729067813920}
@@ -280,8 +280,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Player 2: 99'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 13cd2a12135b4239c9a091066e62a9f2, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 13cd2a12135b4239c9a091066e62a9f2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
