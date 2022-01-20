@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Unity.Netcode;
 
-public class PaddleController : MonoBehaviour
+public class PaddleController : NetworkBehaviour
 {
 
     private enum PlayerNumber
@@ -12,11 +13,13 @@ public class PaddleController : MonoBehaviour
         Player2,
     }
 
-    [SerializeField] private float moveSpeed = 10.0f;
+    // [SerializeField] private float moveSpeed = 10.0f;
     [SerializeField] private PlayerNumber playerNum = PlayerNumber.Player1;
+
+    private NetworkVariable<float> playerMoveDir = new NetworkVariable<float>();
+    [SerializeField] private NetworkVariable<float> moveSpeed = new NetworkVariable<float>(10.0f);
     private PlayerInputAction playerInput;
     private InputAction moveInput;
-    private float moveDir;
 
     private void Awake()
     {
@@ -51,8 +54,33 @@ public class PaddleController : MonoBehaviour
 
     private void Update()
     {
-        moveDir = moveInput.ReadValue<float>();
-        float newPosition = moveDir * moveSpeed * Time.deltaTime;
-        transform.Translate(0.0f, newPosition, 0.0f);
+
+        if (IsServer)
+        {
+            UpdateServer();
+        }
+        else if (IsClient && IsOwner)
+        {
+            UpdateClient();
+        }
     }
+
+    private void UpdateServer()
+    {
+        float newVerticalPosition = playerMoveDir.Value * moveSpeed.Value * Time.deltaTime;
+        transform.Translate(0.0f, newVerticalPosition, 0.0f);
+    }
+    private void UpdateClient()
+    {
+        float moveDir = moveInput.ReadValue<float>();
+        UpdatePlayerMoveDirectionServerRpc(moveDir);
+    }
+
+    [ServerRpc]
+    void UpdatePlayerMoveDirectionServerRpc(float moveDir)
+    {
+        playerMoveDir.Value = moveDir;
+    }
+
+
 }
